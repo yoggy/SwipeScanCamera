@@ -8,7 +8,7 @@ import org.opencv.android.Utils;
 import org.opencv.core.CvType;
 import org.opencv.core.Mat;
 import org.opencv.core.Scalar;
-import org.opencv.highgui.Highgui;
+import org.opencv.imgcodecs.Imgcodecs;
 import org.opencv.imgproc.Imgproc;
 
 import android.annotation.SuppressLint;
@@ -63,7 +63,7 @@ public class SlitScanView extends View {
 		// save
 		Mat bgr_img = new Mat();
 		Imgproc.cvtColor(canvas, bgr_img, Imgproc.COLOR_RGB2BGR);
-		Highgui.imwrite(save_path, bgr_img);
+		Imgcodecs.imwrite(save_path, bgr_img);
 		
 		// update mediascanner
 		scanFile(save_path);
